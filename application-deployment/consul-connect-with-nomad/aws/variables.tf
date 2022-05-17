@@ -43,7 +43,7 @@ variable "private_key_data" {
 
 variable "server_count" {
   description = "The number of servers to provision."
-  default     = "3"
+  default     = "1"
 }
 
 variable "client_count" {
