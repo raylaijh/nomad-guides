@@ -1,6 +1,6 @@
 variable "region" {
   description = "The AWS region to deploy to."
-  default     = "us-east-1"
+  default     = "ap-southeast-1"
 }
 
 variable "ami" {
@@ -20,7 +20,7 @@ variable "subnet_cidr" {
 
 variable "subnet_az" {
   description = "The AZ for the public subnet"
-  default = "us-east-1a"
+  default = "ap-southeast-1a"
 }
 
 variable "server_instance_type" {
@@ -43,12 +43,12 @@ variable "private_key_data" {
 
 variable "server_count" {
   description = "The number of servers to provision."
-  default     = "1"
+  default     = "3"
 }
 
 variable "client_count" {
   description = "The number of clients to provision."
-  default     = "2"
+  default     = "3"
 }
 
 variable "name_tag_prefix" {
