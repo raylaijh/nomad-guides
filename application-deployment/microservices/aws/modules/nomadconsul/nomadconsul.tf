@@ -19,7 +19,7 @@ resource "aws_security_group" "primary" {
   name   = "${var.name_tag_prefix}-sg"
   vpc_id = "${var.vpc_id}"
 
-  tags {
+  tags={
     Name = "${var.name_tag_prefix}-sg"
   }
 }
@@ -290,7 +290,7 @@ resource "aws_security_group_rule" "vault_egress" {
 data "template_file" "user_data_server_primary" {
   template = "${file("${path.root}/user-data-server.sh")}"
 
-  vars {
+  vars={
     server_count      = "${var.server_count}"
     region            = "${var.region}"
     cluster_tag_value = "${var.cluster_tag_value}"
@@ -303,7 +303,7 @@ data "template_file" "user_data_server_primary" {
 data "template_file" "user_data_client" {
   template = "${file("${path.root}/user-data-client.sh")}"
 
-  vars {
+  vars={
     region            = "${var.region}"
     cluster_tag_value = "${var.cluster_tag_value}"
     server_ip = "${aws_instance.primary.0.private_ip}"
